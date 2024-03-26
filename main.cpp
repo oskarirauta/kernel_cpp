@@ -22,6 +22,15 @@ int main(int argc, char **argv) {
 		std::cout << p.first <<
 			( p.second.empty() ? "" : ( " = " + p.second )) << std::endl;
 
+	std::cout << "\nsecurity features:\n" <<
+		"selinux: " << ( kernel -> security -> selinux -> enabled() ? "enabled, " : "disabled, " ) <<
+		"state: " << kernel -> security -> selinux -> mode() << "\n";
+	std::cout << "apparmor: " << ( kernel -> security -> apparmor -> enabled() ?
+			( "enabled, " + std::to_string(kernel -> security -> apparmor -> profile_count()) + " profiles") : "disabled" ) << "\n";
+	std::cout << "seccomp: " << ( kernel -> security -> seccomp -> enabled() ? "enabled" : "disabled" ) << "\n";
+
+	if ( kernel -> security -> seccomp -> enabled())
+		std::cout << "\tactions: " << kernel -> security -> seccomp -> operator std::string() << "\n";
 	std::cout << std::endl;
 
 	delete kernel;

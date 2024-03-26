@@ -49,9 +49,22 @@ kernel_info::kernel_info(const std::string& path) {
 
 	if ( fd.is_open())
 		fd.close();
+
+	security = new security_info();
 }
 
-void kernel_info::parse(void) {
+kernel_info::~kernel_info() {
+
+	if ( security != nullptr )
+		delete security;
+}
+
+void kernel_info::update() {
+
+	this -> security -> update();
+}
+
+void kernel_info::parse() {
 
 	bool is_name = true;
 	bool escaping = false;
