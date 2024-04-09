@@ -6,7 +6,7 @@ int main(int argc, char **argv) {
 	kernel_info *kernel = nullptr;
 
 	try {
-		kernel = new kernel_info();
+		kernel = new kernel_info;
 
 	} catch ( const std::runtime_error& e ) {
 
