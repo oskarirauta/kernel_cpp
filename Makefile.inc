@@ -1,5 +1,6 @@
-KERNEL_DIR?=kernel
-INCLUDES += -I./$(KERNEL_DIR)/include
+KERNEL_DIR?=./kernel
+INCLUDES += -I$(KERNEL_DIR)/include
+
 KERNEL_OBJS:= \
 	objs/kernel_info.o \
 	objs/kernel_security.o \

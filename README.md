@@ -1,6 +1,5 @@
 [![License:MIT](https://img.shields.io/badge/License-MIT-blue?style=plastic)](LICENSE)
 [![C++ CI build](../../actions/workflows/build.yml/badge.svg)](../../actions/workflows/build.yml)
-
 ### kernel_cpp
 
 small library for retrieving kernel's command-line
